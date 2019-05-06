@@ -12,22 +12,18 @@
     <script>
       var w = window.innerWidth;
       var h = window.innerHeight;
-      var d = document
+      var d = document;
       var speedX;
       var xHigh = 0;
       var speedY;
       var yHigh = 0;
       var speedZ;
       var zHigh = 0;
+      var rotateX;
       
       function setup() {
         createCanvas(w, h);
         var setsaf = setInterval(inta, 100);
-      }
-      
-      function draw() {
-        background(220);
-        
       }
       
       function inta() {
@@ -49,6 +45,9 @@
         d.getElementById('highX').innerHTML = "High X Speed: " + xHigh;
         d.getElementById('highY').innerHTML = "High Y Speed: " + yHigh;
         d.getElementById('highZ').innerHTML = "High Z Speed: " + zHigh;
+        
+        rotateX = rotationX;
+        d.getElementById('rotaX').innerHTML = "Rotate X: " + rotateX;
       }
     </script>
   </head>
@@ -59,5 +58,7 @@
     <h1 id="highX"></h1>
     <h1 id="highY"></h1>
     <h1 id="highZ"></h1>
+    <h1>-------------------</h1>
+    <h1 id="rotaX"></h1>
   </body>
 </html>
