@@ -12,22 +12,43 @@
     <script>
       var w = window.innerWidth;
       var h = window.innerHeight;
+      var d = document.
       var speedX;
+      var xHigh = 0;
       var speedY;
+      var yHigh = 0;
       var speedZ;
+      var zHigh = 0;
       
       function setup() {
         createCanvas(w, h);
+        window.setInterval(int, 100);
       }
       
       function draw() {
         background(220);
+        
+      }
+      
+      function int() {
         speedX = Math.floor(accelerationX);
         speedY = Math.floor(accelerationY);
         speedZ = Math.floor(accelerationZ);
-        document.getElementById('testX').innerHTML = speedX;
-        document.getElementById('testY').innerHTML = speedY;
-        document.getElementById('testZ').innerHTML = speedZ;
+        if (speedX < xHigh) {
+          xHigh = speedX;
+        }
+        if (speedY < yHigh) {
+          yHigh = speedY;
+        }
+        if (speedZ < zHigh) {
+          zHigh = speedZ;
+        }
+        d.getElementById('testX').innerHTML = "X: " + speedX;
+        d.getElementById('testY').innerHTML = "Y: " + speedY;
+        d.getElementById('testZ').innerHTML = "Z: " + speedZ;
+        d.getElementById('highX').innerHTML = "High X Speed: " + xHigh;
+        d.getElementById('highY').innerHTML = "High Y Speed: " + yHigh;
+        d.getElementById('highZ').innerHTML = "High Z Speed: " + zHigh;
       }
     </script>
   </head>
@@ -35,5 +56,8 @@
     <h1 id="testX"></h1>
     <h1 id="testY"></h1>
     <h1 id="testZ"></h1>
+    <h1 id="highX"></h1>
+    <h1 id="highY"></h1>
+    <h1 id="highZ"></h1>
   </body>
 </html>
