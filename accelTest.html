@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <style>
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+    </style>
+    <script src="p5/p5.min.js"></script>
+    <script>
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      var speedX;
+      var speedY;
+      var speedZ;
+      
+      function setup() {
+        createCanvas(w, h);
+      }
+      
+      function draw() {
+        background(220);
+        speedX = accelerationX;
+        speedY = accelerationY;
+        speedZ = accelerationZ;
+        document.getElementById('testX').innerHTML = speedX;
+        document.getElementById('testY').innerHTML = speedY;
+        document.getElementById('testZ').innerHTML = speedZ;
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="testX"></h1>
+    <h1 id="testY"></h1>
+    <h1 id="testZ"></h1>
+  </body>
+</html>
