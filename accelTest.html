@@ -27,9 +27,9 @@
       }
       
       function inta() {
-        speedX = Math.floor(accelerationX);
-        speedY = Math.floor(accelerationY);
-        speedZ = Math.floor(accelerationZ);
+        speedX = Math.floor(abs(accelerationX));
+        speedY = Math.floor(abs(accelerationY));
+        speedZ = Math.floor(abs(accelerationZ));
         if (speedX < xHigh) {
           xHigh = speedX;
         }
