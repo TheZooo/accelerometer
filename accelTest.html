@@ -22,9 +22,9 @@
       
       function draw() {
         background(220);
-        speedX = accelerationX;
-        speedY = accelerationY;
-        speedZ = accelerationZ;
+        speedX = Math.floor(accelerationX);
+        speedY = Math.floor(accelerationY);
+        speedZ = Math.floor(accelerationZ);
         document.getElementById('testX').innerHTML = speedX;
         document.getElementById('testY').innerHTML = speedY;
         document.getElementById('testZ').innerHTML = speedZ;
