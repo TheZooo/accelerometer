@@ -37,7 +37,7 @@
       
       function setup() {
         createCanvas(w, h);
-        aSound.setVolume(1);
+        aSound.setVolume(0.5);
         var setsaf = setInterval(inta, 100);
       }
       
@@ -84,7 +84,7 @@
             aSound.play();
           }
           else {
-            aSound.stop();
+            aSound.pause();
           }
         }
       }
