@@ -27,16 +27,16 @@
       var prevRotateX;
       var prevRotateY;
       var isStop = false;
-      var sound;
+      var aSound;
       
       function preload() {
         soundFormats('wav');
-        sound = loadSound('maleScream.wav');
+        aSound = loadSound('maleScream.wav');
       }
       
       function setup() {
         createCanvas(w, h);
-        sound.setVolume(1);
+        aSound.setVolume(1);
         var setsaf = setInterval(inta, 100);
       }
       
@@ -73,12 +73,15 @@
         
         if (isStop === true) {
           if (speedX > 1 || speedY > 1 || speedZ > 1) {
-            if (rotateX !== prevRotateX || rotateY !== prevRotateY || rotateZ !== prevRotateZ) {
-              background(220, 0, 0);
-              sound.play();
-            }
-          } else {
-            sound.stop();
+            background(220, 0, 0);
+            aSound.play();
+          }
+          else if (rotateX !== prevRotateX || rotateY !== prevRotateY || rotateZ !== prevRotateZ) {
+            background(220, 0, 0);
+            aSound.play();
+          }
+          else {
+            aSound.stop();
           }
         }
       }
