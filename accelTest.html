@@ -73,9 +73,9 @@
             if (rotateX !== prevRotateX || rotateY !== prevRotateY || rotateZ !== prevRotateZ) {
               sound.play();
             }
+          } else {
+            sound.stop();
           }
-        } else {
-          sound.stop();
         }
       }
       
