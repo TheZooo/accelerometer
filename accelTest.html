@@ -30,12 +30,13 @@
       var sound;
       
       function preload() {
+        soundFormats('wav');
         sound = loadSound('maleScream.wav');
       }
       
       function setup() {
         createCanvas(w, h);
-        sound.setVolume(0.5);
+        sound.setVolume(1);
         var setsaf = setInterval(inta, 100);
       }
       
