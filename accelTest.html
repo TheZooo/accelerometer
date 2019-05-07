@@ -26,6 +26,7 @@
       var prevRotateZ;
       var prevRotateX;
       var prevRotateY;
+      var rotTol = 1;
       var isStop = false;
       var aSound;
       
@@ -76,7 +77,9 @@
             background(220, 0, 0);
             aSound.play();
           }
-          else if (rotateX !== prevRotateX || rotateY !== prevRotateY || rotateZ !== prevRotateZ) {
+          else if ((rotateX < prevRotateX - rotTol || rotateX > prevRotateX + rotTol) ||
+          (rotateY < prevRotateY - rotTol || rotateY > prevRotateY + rotTol) ||
+          (rotateZ < prevRotateZ - rotTol || rotateZ > prevRotateZ + rotTol)) {
             background(220, 0, 0);
             aSound.play();
           }
