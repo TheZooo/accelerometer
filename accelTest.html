@@ -32,14 +32,13 @@
       var aSound;
       
       function preload() {
-        soundFormats('wav');
         aSound = loadSound('maleScream.wav');
       }
       
       function setup() {
         createCanvas(w, h);
         aSound.setVolume(1);
-        playMode(restart);
+        aSound.playMode('restart');
         var setsaf = setInterval(inta, 100);
       }
       
@@ -89,7 +88,7 @@
             aSound.pause();
           }
         }
-        d.getElementById('isBeingMoved').innerHTML = "Moving: " + isPlaying();
+        d.getElementById('isBeingMoved').innerHTML = "Moving: " + aSoung.isPlaying();
       }
       
       function actStop() {
