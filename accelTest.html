@@ -9,7 +9,7 @@
       }
     </style>
     <script src="p5/p5.min.js"></script>
-    <script src="p5/p5.sound.js"></script>
+    <script src="p5/p5.sound.min.js"></script>
     <script>
       var w = window.innerWidth;
       var h = window.innerHeight;
@@ -26,13 +26,13 @@
       var prevRotateZ;
       var prevRotateX;
       var prevRotateY;
-      var movTol = 5;
-      var rotTol = 5;
+      var movTol = 2;
+      var rotTol = 2;
       var isStop = false;
       var aSound;
       
       function preload() {
-        aSound = loadSound('earDeath.ogg');
+        aSound = loadSound('maleScream.wav');
       }
       
       function setup() {
