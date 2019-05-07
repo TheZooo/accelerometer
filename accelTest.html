@@ -9,6 +9,7 @@
       }
     </style>
     <script src="p5/p5.min.js"></script>
+    <script src="p5/p5.sound.min.js"></script>
     <script>
       var w = window.innerWidth;
       var h = window.innerHeight;
@@ -19,7 +20,18 @@
       var yHigh = 0;
       var speedZ;
       var zHigh = 0;
+      var rotateZ;
       var rotateX;
+      var rotateY;
+      var prevRotateZ;
+      var prevRotateX;
+      var prevRotateY;
+      var isStop = false;
+      var sound;
+      
+      function preload() {
+        sound = loadSound('maleScream.wav');
+      }
       
       function setup() {
         createCanvas(w, h);
@@ -30,13 +42,13 @@
         speedX = Math.floor(Math.abs(accelerationX));
         speedY = Math.floor(Math.abs(accelerationY));
         speedZ = Math.floor(Math.abs(accelerationZ));
-        if (speedX < xHigh) {
+        if (speedX > xHigh) {
           xHigh = speedX;
         }
-        if (speedY < yHigh) {
+        if (speedY > yHigh) {
           yHigh = speedY;
         }
-        if (speedZ < zHigh) {
+        if (speedZ > zHigh) {
           zHigh = speedZ;
         }
         d.getElementById('testX').innerHTML = "X: " + speedX;
@@ -45,9 +57,33 @@
         d.getElementById('highX').innerHTML = "High X Speed: " + xHigh;
         d.getElementById('highY').innerHTML = "High Y Speed: " + yHigh;
         d.getElementById('highZ').innerHTML = "High Z Speed: " + zHigh;
-        
+        //----------------------------------------------------------
+        rotateZ = Math.floor(rotationZ);
         rotateX = Math.floor(rotationX);
+        rotateY = Math.floor(rotationY);
         d.getElementById('rotaX').innerHTML = "Rotate X: " + rotateX;
+        d.getElementById('rotaY').innerHTML = "Rotate Y: " + rotateY;
+        d.getElementById('rotaZ').innerHTML = "Rotate Z: " + rotateZ;
+        if (isStop === true) {
+          prevRotateZ = Math.floor(pRotationZ);
+          prevRotateX = Math.floor(pRotationX);
+          prevRotateY = Math.floor(pRotationY);
+          if (speedX > 1 || speedY > 1 || speedZ > 1) {
+            if (rotateX !== prevRotateX || rotateY !== prevRotateY || rotateZ !== prevRotateZ) {
+              sound.play();
+            }
+          }
+        } else {
+          sound.stop();
+        }
+      }
+      
+      function actStop() {
+        if (isStop === false) {
+          isStop = true;
+        } else if (isStop === true) {
+          isStop = false;
+        }
       }
     </script>
   </head>
@@ -60,5 +96,8 @@
     <h1 id="highZ"></h1>
     <h1>-------------------</h1>
     <h1 id="rotaX"></h1>
+    <h1 id="rotaY"></h1>
+    <h1 id="rotaZ"></h1>
+    <button id="bttn" onclick="actStop()">Set Freeze</button>
   </body>
 </html>
