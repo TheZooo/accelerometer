@@ -39,6 +39,7 @@
         createCanvas(w, h);
         aSound.setVolume(1);
         aSound.playMode('restart');
+        aSound.play();
         var setsaf = setInterval(inta, 100);
       }
       
@@ -88,8 +89,6 @@
             aSound.pause();
           }
         }
-        var dj = isPlaying();
-        d.getElementById('isbeingMoved').innerHTML = "Moving: " + dj;
       }
       
       function actStop() {
@@ -114,7 +113,6 @@
     <h1 id="rotaY"></h1>
     <h1 id="rotaZ"></h1>
     <h1 id="stopChek"></h1>
-    <h1 id="isbeingMoved"></h1>
     <button id="bttn" onclick="actStop()">Set Freeze</button>
   </body>
 </html>
