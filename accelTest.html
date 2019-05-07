@@ -26,7 +26,8 @@
       var prevRotateZ;
       var prevRotateX;
       var prevRotateY;
-      var rotTol = 1;
+      var movTol = 5;
+      var rotTol = 5;
       var isStop = false;
       var aSound;
       
@@ -73,7 +74,7 @@
         d.getElementById('rotaZ').innerHTML = "Rotate Z: " + rotateZ;
         
         if (isStop === true) {
-          if (speedX > 1 || speedY > 1 || speedZ > 1) {
+          if (speedX > movTol || speedY > movTol || speedZ > movTol) {
             background(220, 0, 0);
             aSound.play();
           }
