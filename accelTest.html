@@ -62,14 +62,14 @@
         rotateZ = Math.floor(rotationZ);
         rotateX = Math.floor(rotationX);
         rotateY = Math.floor(rotationY);
+        prevRotateZ = Math.floor(pRotationZ);
+        prevRotateX = Math.floor(pRotationX);
+        prevRotateY = Math.floor(pRotationY);
         d.getElementById('rotaX').innerHTML = "Rotate X: " + rotateX;
         d.getElementById('rotaY').innerHTML = "Rotate Y: " + rotateY;
         d.getElementById('rotaZ').innerHTML = "Rotate Z: " + rotateZ;
         
         if (isStop === true) {
-          prevRotateZ = Math.floor(pRotationZ);
-          prevRotateX = Math.floor(pRotationX);
-          prevRotateY = Math.floor(pRotationY);
           if (speedX > 1 || speedY > 1 || speedZ > 1) {
             if (rotateX !== prevRotateX || rotateY !== prevRotateY || rotateZ !== prevRotateZ) {
               background(220, 0, 0);
