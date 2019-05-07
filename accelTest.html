@@ -32,6 +32,7 @@
       var aSound;
       
       function preload() {
+        soundFormats('wav');
         aSound = loadSound('maleScream.wav');
       }
       
@@ -75,20 +76,20 @@
         
         if (isStop === true) {
           if (speedX > movTol || speedY > movTol || speedZ > movTol) {
-            background(220, 0, 0);
-            aSound.play();
+            plaSoun();
           }
           else if ((rotateX < prevRotateX - rotTol || rotateX > prevRotateX + rotTol) ||
           (rotateY < prevRotateY - rotTol || rotateY > prevRotateY + rotTol) ||
           (rotateZ < prevRotateZ - rotTol || rotateZ > prevRotateZ + rotTol)) {
-            background(220, 0, 0);
-            aSound.play();
-          }
-          else {
-            aSound.pause();
+            plaSoun();
           }
         }
       }
+      
+      function plaSoun() {
+          background(220, 0, 0);
+          aSound.play();
+      }  
       
       function actStop() {
         if (isStop === false) {
