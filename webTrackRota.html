@@ -20,12 +20,12 @@
       
       function draw() {
         background(220);
-        rotZ = Math.abs(rotationZ);
-        rotX = Math.abs(rotationX);
-        rotY = Math.abs(rotationY);
-        moveZRot = Math.abs(pRotationZ);
-        moveXRot = Math.abs(pRotationX);
-        moveYRot = Math.abs(pRotationY);
+        rotZ = rotationZ;
+        rotX = rotationX;
+        rotY = rotationY;
+        moveZRot = pRotationZ;
+        moveXRot = pRotationX;
+        moveYRot = pRotationY;
         var cx = rotX - moveXRot;
         var cy = rotY - moveYRot;
         var cz = rotZ - moveZRot;
