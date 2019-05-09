@@ -40,6 +40,15 @@
         var setsaf = setInterval(inta, 100);
       }
       
+      function plaSoun() {
+          background(220, 0, 0);
+          aSound.play();
+      }
+      
+      function mouseClicked() {
+          aSound.play();
+      }  
+      
       function inta() {
         background(255);
         speedX = Math.floor(Math.abs(accelerationX));
@@ -54,9 +63,9 @@
         if (speedZ > zHigh) {
           zHigh = speedZ;
         }
-        d.getElementById('testX').innerHTML = "X: " + speedX;
-        d.getElementById('testY').innerHTML = "Y: " + speedY;
-        d.getElementById('testZ').innerHTML = "Z: " + speedZ;
+        d.getElementById('testX').innerHTML = "Curr. X: " + speedX;
+        d.getElementById('testY').innerHTML = "Curr. Y: " + speedY;
+        d.getElementById('testZ').innerHTML = "Curr. Z: " + speedZ;
         d.getElementById('highX').innerHTML = "High X Speed: " + xHigh;
         d.getElementById('highY').innerHTML = "High Y Speed: " + yHigh;
         d.getElementById('highZ').innerHTML = "High Z Speed: " + zHigh;
@@ -84,11 +93,6 @@
             plaSoun();
           }
         }
-      }
-      
-      function plaSoun() {
-          background(220, 0, 0);
-          aSound.play();
       }
       
       function actStop() {
