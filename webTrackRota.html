@@ -20,20 +20,23 @@
       
       function draw() {
         background(220);
-        rotZ = rotationZ;
-        rotX = rotationX;
-        rotY = rotationY;
-        moveZRot = pRotationZ;
-        moveXRot = pRotationX;
-        moveYRot = pRotationY;
+        rotZ = Math.abs(rotationZ);
+        rotX = Math.abs(rotationX);
+        rotY = Math.abs(rotationY);
+        moveZRot = Math.abs(pRotationZ);
+        moveXRot = Math.abs(pRotationX);
+        moveYRot = Math.abs(pRotationY);
         if (rotX > moveXRot) {
-            setX--;
+            var ax = rotX - moveXRot;
+            setX-=ax;
         }
         if (rotX < moveXRot) {
-            setX++;
+            var ax = rotX - moveXRot;
+            setX+=ax;
         }
         if (rotY > moveYRot) {
-            setY--;
+            var ay = rotY - moveYRot;
+            setY-=ay;
         }
         if (rotY < moveYRot) {
             setY++;
