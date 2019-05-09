@@ -10,9 +10,9 @@
       var moveXRot;
       var moveYRot;
       var moveZRot;
-      var setX;
-      var setY;
-      var setZ;
+      var setX = 0;
+      var setY = 0;
+      var setZ = 0;
       
       function setup() {
         createCanvas(w, h, WEBGL);
@@ -48,7 +48,7 @@
         rotateY(setY/100);
         rotateZ(setZ/100);
         document.getElementById('test').innerHTML = rotX.toFixed(1) + " " + rotY.toFixed(1) + " " + rotZ.toFixed(1);
-        box(80);
+        box(200);
       }
     </script>
     <style>
