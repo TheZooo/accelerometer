@@ -70,6 +70,9 @@
         d.getElementById('rotaX').innerHTML = "Rotate X: " + rotateX;
         d.getElementById('rotaY').innerHTML = "Rotate Y: " + rotateY;
         d.getElementById('rotaZ').innerHTML = "Rotate Z: " + rotateZ;
+        d.getElementById('pRotaX').innerHTML = "Prev. Rotate X: " + prevRotateX;
+        d.getElementById('pRotaY').innerHTML = "Prev. Rotate Y: " + prevRotateY;
+        d.getElementById('pRotaZ').innerHTML = "Prev. Rotate Z: " + prevRotateZ;
         
         if (isStop === true) {
           if (speedX > movTol || speedY > movTol || speedZ > movTol) {
@@ -86,7 +89,7 @@
       function plaSoun() {
           background(220, 0, 0);
           aSound.play();
-      }  
+      }
       
       function actStop() {
         if (isStop === false) {
@@ -109,6 +112,9 @@
     <h1 id="rotaX"></h1>
     <h1 id="rotaY"></h1>
     <h1 id="rotaZ"></h1>
+    <h1 id="pRotaX"></h1>
+    <h1 id="pRotaY"></h1>
+    <h1 id="pRotaZ"></h1>
     <h1 id="stopChek"></h1>
     <button id="bttn" onclick="actStop()">Set Freeze</button>
   </body>
