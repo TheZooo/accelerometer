@@ -17,13 +17,20 @@
         rotZ = rotationZ;
         rotX = rotationX;
         rotY = rotationY;
-        rotateX(rotX/100);
-        rotateY(rotY/100);
-        rotateZ(rotZ/100);
-        document.getElementById('test').innerHTML = rotX + " " + rotY + " " + rotZ;
+        rotateX(rotX/90);
+        rotateY(rotY/90);
+        rotateZ(rotZ/90);
+        document.getElementById('test').innerHTML = rotX.toFixed(1) + " " + rotY.toFixed(1) + " " + rotZ.toFixed(1);
         box(80);
       }
     </script>
+    <style>
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    </style>
   </head>
   <body>
     <p id="test"></p>
