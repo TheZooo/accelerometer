@@ -16,10 +16,6 @@
       
       function setup() {
         createCanvas(w, h, WEBGL);
-        moveZRot = rotationZ;
-        moveXRot = rotationX;
-        moveYRot = rotationY;
-        var intas = setInterval(chekR, 65);
       }
       
       function draw() {
@@ -27,35 +23,32 @@
         rotZ = rotationZ;
         rotX = rotationX;
         rotY = rotationY;
+        moveZRot = pRotationZ;
+        moveXRot = pRotationX;
+        moveYRot = pRotationY;
         if (rotX > moveXRot) {
-            setX++;
-        }
-        if (rotX < moveXRot) {
             setX--;
         }
-        if (rotY > moveYRot) {
-            setY++;
+        if (rotX < moveXRot) {
+            setX++;
         }
-        if (rotY < moveYRot) {
+        if (rotY > moveYRot) {
             setY--;
         }
-        if (rotZ > moveZRot) {
-            setZ++;
+        if (rotY < moveYRot) {
+            setY++;
         }
-        if (rotZ < moveZRot) {
+        if (rotZ > moveZRot) {
             setZ--;
         }
-        rotateX(setX/10);
-        rotateY(setY/10);
-        rotateZ(setZ/10);
+        if (rotZ < moveZRot) {
+            setZ++;
+        }
+        rotateX(setX/100);
+        rotateY(setY/100);
+        rotateZ(setZ/100);
         document.getElementById('test').innerHTML = rotX.toFixed(1) + " " + rotY.toFixed(1) + " " + rotZ.toFixed(1);
         box(80);
-      }
-      
-      function chekR() {
-        moveZRot = rotationZ;
-        moveXRot = rotationX;
-        moveYRot = rotationY;
       }
     </script>
     <style>
