@@ -26,30 +26,30 @@
         moveZRot = Math.abs(pRotationZ);
         moveXRot = Math.abs(pRotationX);
         moveYRot = Math.abs(pRotationY);
+        var cx = rotX - moveXRot;
+        var cy = rotY - moveYRot;
+        var cz = rotZ - moveZRot;
         if (rotX > moveXRot) {
-            var ax = rotX - moveXRot;
-            setX-=ax;
+            setX-=cx;
         }
         if (rotX < moveXRot) {
-            var ax = rotX - moveXRot;
-            setX+=ax;
+            setX+=cx;
         }
         if (rotY > moveYRot) {
-            var ay = rotY - moveYRot;
-            setY-=ay;
+            setY-=cy;
         }
         if (rotY < moveYRot) {
-            setY++;
+            setY+=cy;
         }
         if (rotZ > moveZRot) {
-            setZ--;
+            setZ-=cz;
         }
         if (rotZ < moveZRot) {
-            setZ++;
+            setZ+=cz;
         }
-        rotateX(setX/100);
-        rotateY(setY/100);
-        rotateZ(setZ/100);
+        rotateX(setX/80);
+        rotateY(setY/80);
+        rotateZ(setZ/80);
         document.getElementById('test').innerHTML = rotX.toFixed(1) + " " + rotY.toFixed(1) + " " + rotZ.toFixed(1);
         box(200);
       }
